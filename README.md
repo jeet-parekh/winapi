@@ -6,8 +6,9 @@ APIs wrapped:
 
 - [Configuration](https://msdn.microsoft.com/en-us/library/ff625300.aspx)
 - [Hooks](https://msdn.microsoft.com/en-us/library/ms632589.aspx)
-- [Messages and Message Queues](https://msdn.microsoft.com/en-us/library/ms632590.aspx)
 - [Keyboard Input](https://msdn.microsoft.com/en-us/library/ms645530.aspx)
+- [Messages and Message Queues](https://msdn.microsoft.com/en-us/library/ms632590.aspx)
+- [Mouse Input](https://msdn.microsoft.com/en-us/library/ms645533.aspx)
 - [Multiple Document Interface](https://msdn.microsoft.com/en-us/library/ms632591.aspx)
 - [Raw Input](https://msdn.microsoft.com/en-us/library/ms645536.aspx)
 - [Timers](https://msdn.microsoft.com/en-us/library/ms632592.aspx)

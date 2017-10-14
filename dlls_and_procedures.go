@@ -92,6 +92,20 @@ var (
 	procDefMDIChildProc = user32DLL.NewProc("DefMDIChildProcW")
 	procTranslateMDISysAccel = user32DLL.NewProc("TranslateMDISysAccel")
 
+	// MOUSE INPUT
+	// https://msdn.microsoft.com/en-us/library/ff468875.aspx
+	procDragDetect = user32DLL.NewProc("DragDetect")
+	procEnableMouseInPointer = user32DLL.NewProc("EnableMouseInPointer")
+	procGetCapture = user32DLL.NewProc("GetCapture")
+	procGetDoubleClickTime = user32DLL.NewProc("GetDoubleClickTime")
+	procGetMouseMovePointsEx = user32DLL.NewProc("GetMouseMovePointsEx")
+	procMouse_event = user32DLL.NewProc("mouse_event")
+	procReleaseCapture = user32DLL.NewProc("ReleaseCapture")
+	procSetCapture = user32DLL.NewProc("SetCapture")
+	procSetDoubleClickTime = user32DLL.NewProc("SetDoubleClickTime")
+	procSwapMouseButton = user32DLL.NewProc("SwapMouseButton")
+	procTrackMouseEvent = user32DLL.NewProc("TrackMouseEvent")
+
 	// RAW INPUT
 	// https://msdn.microsoft.com/en-us/library/ff468896.aspx
 	procDefRawInputProc = user32DLL.NewProc("DefRawInputProc")

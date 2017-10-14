@@ -407,4 +407,20 @@ type (
 		CbSize uint32
 		DwTime uint32
 	}
+
+	// https://msdn.microsoft.com/en-us/library/ms645603.aspx
+	MOUSEMOVEPOINT struct {
+		X int32
+		Y int32
+		Time uint32
+		DwExtraInfo uint32
+	}
+
+	// https://msdn.microsoft.com/en-us/library/ms645604.aspx
+	TRACKMOUSEEVENT struct {
+		CbSize uint32
+		DwFlags uint32
+		HwndTrack uintptr
+		DwHoverTime uint32
+	}
 )

@@ -9,6 +9,11 @@ var (
 )
 
 var (
+	// CONFIGURATION
+	// https://msdn.microsoft.com/en-us/library/ff625301.aspx
+	procGetSystemMetrics = user32DLL.NewProc("GetSystemMetrics")
+	procSystemParametersInfo = user32DLL.NewProc("SystemParametersInfoW")
+	
 	// HOOKS
 	// https://msdn.microsoft.com/en-us/library/ff468842.aspx
 	procCallMsgFilter = user32DLL.NewProc("CallMsgFilterW")

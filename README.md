@@ -4,6 +4,7 @@
 
 APIs wrapped:
 
+- [Configuration](https://msdn.microsoft.com/en-us/library/ff625300.aspx)
 - [Hooks](https://msdn.microsoft.com/en-us/library/ms632589.aspx)
 - [Messages and Message Queues](https://msdn.microsoft.com/en-us/library/ms632590.aspx)
 - [Raw Input](https://msdn.microsoft.com/en-us/library/ms645536.aspx)
@@ -28,7 +29,7 @@ WINAPI uses `union` which is not available in Go. To handle that, variants of st
 
 MouseButtons (MB) and MouseButtonInformation (MBI) are variants of `RAWMOUSE` structure.
 
-`GetRawInputDeviceInfo` for `uiCommand` `RIDI_PREPARSEDDATA` isn't implemented.
+`GetRawInputDeviceInfo` for uiCommand `RIDI_PREPARSEDDATA` isn't implemented.
 
 ### Structures
 

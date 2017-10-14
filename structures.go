@@ -1,6 +1,85 @@
 package winapi
 
 type (
+	// https://msdn.microsoft.com/en-us/library/ms724197.aspx
+	ANIMATIONINFO struct {
+		CbSize uint32
+		IMinAnimate int32
+	}
+
+	// https://msdn.microsoft.com/en-us/library/aa379651.aspx
+	AUDIODESCRIPTION struct {
+		CbSize uint32
+		Enabled int32
+		Locale uint32
+	}
+
+	// https://msdn.microsoft.com/en-us/library/ms724500.aspx
+	MINIMIZEDMETRICS struct {
+		CbSize uint32
+		IWidth int32
+		IHorzGap int32
+		IVertGap int32
+		IArrange int32
+	}
+
+	// https://msdn.microsoft.com/en-us/library/ff729175.aspx
+	NONCLIENTMETRICS_L struct {
+		CbSize uint32
+		IBorderWidth int32
+		IScrollWidth int32
+		IScrollHeight int32
+		ICaptionWidth int32
+		ICaptionHeight int32
+		LfCaptionFont LOGFONT
+		ISmCaptionWidth int32
+		ISmCaptionHeight int32
+		LfSmCaptionFont LOGFONT
+		IMenuWidth int32
+		IMenuHeight int32
+		LfMenuFont LOGFONT
+		LfStatusFont LOGFONT
+		LfMessageFont LOGFONT
+	}
+
+	// https://msdn.microsoft.com/en-us/library/ff729175.aspx
+	NONCLIENTMETRICS struct {
+		CbSize uint32
+		IBorderWidth int32
+		IScrollWidth int32
+		IScrollHeight int32
+		ICaptionWidth int32
+		ICaptionHeight int32
+		LfCaptionFont LOGFONT
+		ISmCaptionWidth int32
+		ISmCaptionHeight int32
+		LfSmCaptionFont LOGFONT
+		IMenuWidth int32
+		IMenuHeight int32
+		LfMenuFont LOGFONT
+		LfStatusFont LOGFONT
+		LfMessageFont LOGFONT
+		IPaddedBorderWidth int32
+	}
+
+	// https://msdn.microsoft.com/en-us/library/dd145037.aspx
+	LOGFONT struct {
+		LfHeight int32
+		LfWidth int32
+		LfEscapement int32
+		LfOrientation int32
+		LfWeight int32
+		LfItalic uint8
+		LfUnderline uint8
+		LfStrikeOut uint8
+		LfCharSet uint8
+		LfOutPrecision uint8
+		LfClipPrecision uint8
+		LfQuality uint8
+		LfPitchAndFamily uint8
+		LfFaceName []uint16
+	}
+
 	// https://msdn.microsoft.com/en-us/library/ms645549.aspx
 	RAWHID struct {
 		DwSizeHid uint32

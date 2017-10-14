@@ -9,6 +9,7 @@ APIs wrapped:
 - [Messages and Message Queues](https://msdn.microsoft.com/en-us/library/ms632590.aspx)
 - [Multiple Document Interface](https://msdn.microsoft.com/en-us/library/ms632591.aspx)
 - [Raw Input](https://msdn.microsoft.com/en-us/library/ms645536.aspx)
+- [Timers](https://msdn.microsoft.com/en-us/library/ms632592.aspx)
 
 ---
 

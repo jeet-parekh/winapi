@@ -4,6 +4,8 @@
 
 APIs wrapped:
 
+- [Hooks](https://msdn.microsoft.com/en-us/library/ms632589.aspx)
+- [Messages and Message Queues](https://msdn.microsoft.com/en-us/library/ms632590.aspx)
 - [Raw Input](https://msdn.microsoft.com/en-us/library/ms645536.aspx)
 
 ---

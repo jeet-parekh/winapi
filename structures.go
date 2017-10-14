@@ -3,9 +3,9 @@ package winapi
 type (
 	// https://msdn.microsoft.com/en-us/library/ms645549.aspx
 	RAWHID struct {
-		SizeHid uint32
-		Count uint32
-		RawData []uint8
+		DwSizeHid uint32
+		DwCount uint32
+		BRawData []uint8
 	}
 
 	// https://msdn.microsoft.com/en-us/library/ms645562.aspx
@@ -34,24 +34,24 @@ type (
 
 	// https://msdn.microsoft.com/en-us/library/ms645565.aspx
 	RAWINPUTDEVICE struct {
-		UsagePage uint16
-		Usage uint16
-		Flags uint32
-		Target uintptr
+		UsUsagePage uint16
+		UsUsage uint16
+		DwFlags uint32
+		HwndTarget uintptr
 	}
 
 	// https://msdn.microsoft.com/en-us/library/ms645568.aspx
 	RAWINPUTDEVICELIST struct {
-		Device uintptr
-		Type uint32
+		HDevice uintptr
+		DwType uint32
 	}
 
 	// https://msdn.microsoft.com/en-us/library/ms645571.aspx
 	RAWINPUTHEADER struct {
-		Type uint32
-		Size uint32
-		Device uintptr
-		Param uintptr
+		DwType uint32
+		DwSize uint32
+		HDevice uintptr
+		WParam uintptr
 	}
 
 	// https://msdn.microsoft.com/en-us/library/ms645575.aspx
@@ -66,72 +66,216 @@ type (
 
 	// https://msdn.microsoft.com/en-us/library/ms645578.aspx
 	RAWMOUSEBUTTONS struct {
-		Flags uint16
-		Buttons uint32
-		RawButtons uint32
-		LastX int32
-		LastY int32
-		ExtraInformation uint32
+		UsFlags uint16
+		UlButtons uint32
+		UlRawButtons uint32
+		LLastX int32
+		LLastY int32
+		UlExtraInformation uint32
 	}
 
 	// https://msdn.microsoft.com/en-us/library/ms645578.aspx
 	RAWMOUSEBUTTONINFO struct {
-		Flags uint16
+		UsFlags uint16
 		ButtonInfo struct {
-			ButtonFlags uint16
-			ButtonData uint16
+			UsButtonFlags uint16
+			UsButtonData uint16
 		}
-		RawButtons uint32
-		LastX int32
-		LastY int32
-		ExtraInformation uint32
+		UlRawButtons uint32
+		LLastX int32
+		LLastY int32
+		UlExtraInformation uint32
 	}
 
 	// https://msdn.microsoft.com/en-us/library/ms645581.aspx
 	RIDI_M struct {
-		Size uint32
-		Type uint32
-		Definition RID_DEVICE_INFO_MOUSE
+		CbSize uint32
+		DwType uint32
+		Mouse RID_DEVICE_INFO_MOUSE
 	}
 
 	// https://msdn.microsoft.com/en-us/library/ms645581.aspx
 	RIDI_K struct {
-		Size uint32
-		Type uint32
-		Definition RID_DEVICE_INFO_KEYBOARD
+		CbSize uint32
+		DwType uint32
+		Keyboard RID_DEVICE_INFO_KEYBOARD
 	}
 
 	// https://msdn.microsoft.com/en-us/library/ms645581.aspx
 	RIDI_HID struct {
-		Size uint32
-		Type uint32
-		Definition RID_DEVICE_INFO_HID
+		CbSize uint32
+		DwType uint32
+		HID RID_DEVICE_INFO_HID
 	}
 
 	// https://msdn.microsoft.com/en-us/library/ms645584.aspx
 	RID_DEVICE_INFO_HID struct {
-		VendorId uint32
-		ProductId uint32
-		VersionNumber uint32
-		UsagePage uint16
-		Usage uint16
+		DwVendorId uint32
+		DwProductId uint32
+		DwVersionNumber uint32
+		UsUsagePage uint16
+		UsUsage uint16
 	}
 
 	// https://msdn.microsoft.com/en-us/library/ms645587.aspx
 	RID_DEVICE_INFO_KEYBOARD struct {
-		Type uint32
-		SubType uint32
-		KeyboardMode uint32
-		NumberOfFunctionKeys uint32
-		NumberOfIndicators uint32
-		NumberOfKeysTotal uint32
+		DwType uint32
+		DwSubType uint32
+		DwKeyboardMode uint32
+		DwNumberOfFunctionKeys uint32
+		DwNumberOfIndicators uint32
+		DwNumberOfKeysTotal uint32
 	}
 
 	// https://msdn.microsoft.com/en-us/library/ms645589.aspx
 	RID_DEVICE_INFO_MOUSE struct {
-		Id uint32
-		NumberOfButtons uint32
-		SampleRate uint32
-		HasHorizontalWheel int32
+		DwId uint32
+		DwNumberOfButtons uint32
+		DwSampleRate uint32
+		FHasHorizontalWheel int32
+	}
+
+	// https://msdn.microsoft.com/en-us/library/ms644957.aspx
+	BSMINFO struct {
+		CbSize uint32
+		Hdesk uintptr
+		Hwnd uintptr
+		Luid LUID
+	}
+
+	// https://msdn.microsoft.com/en-us/library/ms644958.aspx
+	MSG struct {
+		Hwnd uintptr
+		Message uint32
+		WParam uintptr
+		LParam uintptr
+		Time uint32
+		Pt POINT
+	}
+
+	// https://msdn.microsoft.com/en-us/library/aa379261.aspx
+	LUID struct {
+		LowPart uint32
+		HighPart int32
+	}
+
+	// https://msdn.microsoft.com/en-us/library/dd162805.aspx
+	POINT struct {
+		X int32
+		Y int32
+	}
+
+	// https://msdn.microsoft.com/en-us/library/ms632603.aspx
+	CREATESTRUCT struct {
+		LpCreateParams uintptr
+		HInstance uintptr
+		HMenu uintptr
+		HwndParent uintptr
+		Cy int32
+		Cx int32
+		Y int32
+		X int32
+		Style int32
+		LpszName []uint16
+		LpszClass []uint16
+		DwExStyle uint32
+	}
+
+	// https://msdn.microsoft.com/en-us/library/ms632602.aspx
+	CLIENTCREATESTRUCT struct {
+		HWindowMenu uintptr
+		IdFirstChild uint32
+	}
+
+	// https://msdn.microsoft.com/en-us/library/ms644910.aspx
+	MDICREATESTRUCT struct {
+		SzClass []uint16
+		SzTitle []uint16
+		HOwner uintptr
+		X int32
+		Y int32
+		Cx int32
+		Cy int32
+		Style uint32
+		LParam uintptr
+	}
+
+	// https://msdn.microsoft.com/en-us/library/ms644962.aspx
+	CBT_CREATEWND struct {
+		Lpcs *CREATESTRUCT
+		HwndInsertAfter uintptr
+	}
+
+	// https://msdn.microsoft.com/en-us/library/ms644961.aspx
+	CBTACTIVATESTRUCT struct {
+		FMouse int32
+		HwndActive uintptr
+	}
+
+	// https://msdn.microsoft.com/en-us/library/ms644963.aspx
+	CWPRETSTRUCT struct {
+		LResult uintptr
+		LParam uintptr
+		WParam uintptr
+		Message uint32
+		Hwnd uintptr
+	}
+
+	// https://msdn.microsoft.com/en-us/library/ms644964.aspx
+	CWPSTRUCT struct {
+		LParam uintptr
+		WParam uintptr
+		Message uint32
+		Hwnd uintptr
+	}
+
+	// https://msdn.microsoft.com/en-us/library/ms644965.aspx
+	DEBUGHOOKINFO struct {
+		IdThread uint32
+		IdThreadInstaller uint32
+		LParam uintptr
+		WParam uintptr
+		Code int32
+	}
+
+	// https://msdn.microsoft.com/en-us/library/ms644966.aspx
+	EVENTMSG struct {
+		Message uint32
+		ParamL uint32
+		ParamH uint32
+		Time uint32
+		Hwnd uintptr
+	}
+
+	// https://msdn.microsoft.com/en-us/library/ms644967.aspx
+	KBDLLHOOKSTRUCT struct {
+		VkCode uint32
+		ScanCode uint32
+		Flags uint32
+		Time uint32
+		DwExtraInfo uint32
+	}
+
+	// https://msdn.microsoft.com/en-us/library/ms644968.aspx
+	MOUSEHOOKSTRUCT struct {
+		Pt POINT
+		Hwnd uintptr
+		WHitTestCode uint32
+		DwExtraInfo uint32
+	}
+
+	// https://msdn.microsoft.com/en-us/library/ms644969.aspx
+	MOUSEHOOKSTRUCTEX struct {
+		MOUSEHOOKSTRUCT MOUSEHOOKSTRUCT
+		MouseData uint32
+	}
+
+	// https://msdn.microsoft.com/en-us/library/ms644970.aspx
+	MSLLHOOKSTRUCT struct {
+		Pt POINT
+		MouseData uint32
+		Flags uint32
+		Time uint32
+		DwExtraInfo uint32
 	}
 )

@@ -90,25 +90,25 @@ type (
 	// https://msdn.microsoft.com/en-us/library/ms645562.aspx
 	RAWINPUT_MB struct {
 		Header RAWINPUTHEADER
-		Data RAWMOUSEBUTTONS
+		Mouse RAWMOUSEBUTTONS
 	}
 
 	// https://msdn.microsoft.com/en-us/library/ms645562.aspx
 	RAWINPUT_MBI struct {
 		Header RAWINPUTHEADER
-		Data RAWMOUSEBUTTONINFO
+		Mouse RAWMOUSEBUTTONINFO
 	}
 
 	// https://msdn.microsoft.com/en-us/library/ms645562.aspx
 	RAWINPUT_K struct {
 		Header RAWINPUTHEADER
-		Data RAWKEYBOARD
+		Keyboard RAWKEYBOARD
 	}
 
 	// https://msdn.microsoft.com/en-us/library/ms645562.aspx
 	RAWINPUT_HID struct {
 		Header RAWINPUTHEADER
-		Data RAWHID
+		HID RAWHID
 	}
 
 	// https://msdn.microsoft.com/en-us/library/ms645565.aspx
@@ -356,5 +356,55 @@ type (
 		Flags uint32
 		Time uint32
 		DwExtraInfo uint32
+	}
+
+	// https://msdn.microsoft.com/en-us/library/ms646269.aspx
+	HARDWAREINPUT struct {
+		UMsg uint32
+		WParamL uint16
+		WParamH uint16
+	}
+
+	// https://msdn.microsoft.com/en-us/library/ms646271.aspx
+	KEYBDINPUT struct {
+		WVk uint16
+		WScan uint16
+		DwFlags uint32
+		Time uint32
+		DwExtraInfo uint32
+	}
+
+	// https://msdn.microsoft.com/en-us/library/ms646273.aspx
+	MOUSEINPUT struct {
+		Dx int32
+		Dy int32
+		MouseData uint32
+		DwFlags uint32
+		Time uint32
+		DwExtraInfo uint32
+	}
+
+	// https://msdn.microsoft.com/en-us/library/ms646270.aspx
+	INPUT_M struct {
+		Type uint32
+		MI MOUSEINPUT
+	}
+
+	// https://msdn.microsoft.com/en-us/library/ms646270.aspx
+	INPUT_K struct {
+		Type uint32
+		KI KEYBDINPUT
+	}
+
+	// https://msdn.microsoft.com/en-us/library/ms646270.aspx
+	INPUT_HW struct {
+		Type uint32
+		HI HARDWAREINPUT
+	}
+
+	// https://msdn.microsoft.com/en-us/library/ms646272.aspx
+	LASTINPUTINFO struct {
+		CbSize uint32
+		DwTime uint32
 	}
 )

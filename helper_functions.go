@@ -12,7 +12,7 @@ func int32ToUintptr(v int32) uintptr {
 	return uintptr(v)
 }
 
-func strToUintptr(str string) (uintptr, error) {
+func stringToUintptr(str string) (uintptr, error) {
 	if str == "" {
 		return 0, nil
 	}

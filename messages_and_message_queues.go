@@ -96,11 +96,11 @@ func PostThreadMessage(idThread uintptr, Msg uintptr, wParam uintptr, lParam uin
 
 // https://msdn.microsoft.com/en-us/library/ms644947.aspx
 func RegisterWindowMessage(lpString string) (uintptr, error) {
-	_lpString, err := strToUintptr(lpString)
+	_lpString, err := stringToUintptr(lpString)
 	if err != nil {
 		return 0, err
 	}
-	r1, _, err := procRegisterWindowMessage.Call(uintptr(unsafe.Pointer(_lpString)))
+	r1, _, err := procRegisterWindowMessage.Call(_lpString)
 	return r1, err
 }
 

@@ -48,6 +48,13 @@ var (
 	procTranslateMessage = user32DLL.NewProc("TranslateMessage")
 	procWaitMessage = user32DLL.NewProc("WaitMessage")
 
+	// MULTIPLE DOCUMENT INTERFACE
+	// https://msdn.microsoft.com/en-us/library/ff468891.aspx
+	procCreateMDIWindow = user32DLL.NewProc("CreateMDIWindowW")
+	procDefFrameProc = user32DLL.NewProc("DefFrameProcW")
+	procDefMDIChildProc = user32DLL.NewProc("DefMDIChildProcW")
+	procTranslateMDISysAccel = user32DLL.NewProc("TranslateMDISysAccel")
+
 	// RAW INPUT
 	// https://msdn.microsoft.com/en-us/library/ff468896.aspx
 	procDefRawInputProc = user32DLL.NewProc("DefRawInputProc")

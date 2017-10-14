@@ -361,17 +361,32 @@ const (
 	WM_ACTIVATE uintptr = 0x0006
 	WM_APPCOMMAND uintptr = 0x0319
 	WM_CHAR uintptr = 0x0102
+	WM_CHILDACTIVATE uintptr = 0x0022
+	WM_COMMAND uintptr = 0x0111
 	WM_DEADCHAR uintptr = 0x0103
+	WM_GETMINMAXINFO uintptr = 0x0024
 	WM_HOTKEY uintptr = 0x0312
 	WM_KEYDOWN uintptr = 0x0100
 	WM_KEYUP uintptr = 0x0101
 	WM_KILLFOCUS uintptr = 0x0008
+	WM_MENUCHAR uintptr = 0x0120
+	WM_MOVE uintptr = 0x0003
 	WM_SETFOCUS uintptr = 0x0007
+	WM_SIZE uintptr = 0x0005
 	WM_SYSCHAR uintptr = 0x0106
+	WM_SYSCOMMAND uintptr = 0x0112
 	WM_SYSDEADCHAR uintptr = 0x0107
 	WM_SYSKEYDOWN uintptr = 0x0104
 	WM_SYSKEYUP uintptr = 0x0105
 	WM_UNICHAR uintptr = 0x0109
+
+	MF_POPUP uintptr = 0x00000010
+	MF_SYSMENU uintptr = 0x00002000
+
+	MNC_CLOSE uintptr = 1
+	MNC_EXECUTE uintptr = 2
+	MNC_IGNORE uintptr = 0
+	MNC_SELECT uintptr = 3
 
 	WA_ACTIVE uintptr = 1
 	WA_CLICKACTIVE uintptr = 2
@@ -518,12 +533,13 @@ const (
 	WM_XBUTTONDBLCLK uintptr = 0x020D
 	WM_XBUTTONDOWN uintptr = 0x020B
 	WM_XBUTTONUP uintptr = 0x020C
-	
+	WM_NCACTIVATE uintptr = 0x0086
+
 	MA_ACTIVATE uintptr = 1
 	MA_ACTIVATEANDEAT uintptr = 2
 	MA_NOACTIVATE uintptr = 3
 	MA_NOACTIVATEANDEAT uintptr = 4
-	
+
 	HTBORDER uintptr = 18
 	HTBOTTOM uintptr = 15
 	HTBOTTOMLEFT uintptr = 16
@@ -1013,6 +1029,32 @@ const (
 
 	FE_FONTSMOOTHINGORIENTATIONBGR uintptr = 0x0000
 	FE_FONTSMOOTHINGORIENTATIONRGB uintptr = 0x0001
+
+	SIZE_MAXHIDE uintptr = 4
+	SIZE_MAXIMIZED uintptr = 2
+	SIZE_MAXSHOW uintptr = 3
+	SIZE_MINIMIZED uintptr = 1
+	SIZE_RESTORED uintptr = 0
+
+	SC_CLOSE uintptr = 0xF060
+	SC_CONTEXTHELP uintptr = 0xF180
+	SC_DEFAULT uintptr = 0xF160
+	SC_HOTKEY uintptr = 0xF150
+	SC_HSCROLL uintptr = 0xF080
+	SCF_ISSECURE uintptr = 0x00000001
+	SC_KEYMENU uintptr = 0xF100
+	SC_MAXIMIZE uintptr = 0xF030
+	SC_MINIMIZE uintptr = 0xF020
+	SC_MONITORPOWER uintptr = 0xF170
+	SC_MOUSEMENU uintptr = 0xF090
+	SC_MOVE uintptr = 0xF010
+	SC_NEXTWINDOW uintptr = 0xF040
+	SC_PREVWINDOW uintptr = 0xF050
+	SC_RESTORE uintptr = 0xF120
+	SC_SCREENSAVE uintptr = 0xF140
+	SC_SIZE uintptr = 0xF000
+	SC_TASKLIST uintptr = 0xF130
+	SC_VSCROLL uintptr = 0xF070
 )
 
 const (

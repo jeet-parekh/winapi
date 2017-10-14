@@ -2,7 +2,6 @@ package winapi
 
 import (
 	"unsafe"
-	"golang.org/x/sys/windows"
 )
 
 // https://msdn.microsoft.com/en-us/library/ms646289.aspx
@@ -199,7 +198,7 @@ func ToAsciiEx(uVirtKey uintptr, uScanCode uintptr, lpKeyState []uint8, lpChar [
 }
 
 // https://msdn.microsoft.com/en-us/library/ms646320.aspx
-func ToUnicode(wVirtKey uintptr, wScanCode uintptr, lpKeyState []byte, pwszBuff []uint16, cchBuff uintptr, wFlags uintptr) (uintptr, error) {
+func ToUnicode(wVirtKey uintptr, wScanCode uintptr, lpKeyState []uint8, pwszBuff []uint16, cchBuff uintptr, wFlags uintptr) (uintptr, error) {
 	var _lpKeyState uintptr
 	if lpKeyState == nil {
 		_lpKeyState = 0
@@ -211,7 +210,7 @@ func ToUnicode(wVirtKey uintptr, wScanCode uintptr, lpKeyState []byte, pwszBuff 
 }
 
 // https://msdn.microsoft.com/en-us/library/ms646322.aspx
-func ToUnicodeEx(wVirtKey uintptr, wScanCode uintptr, lpKeyState []byte, pwszBuff []uint16, cchBuff uintptr, wFlags uintptr, dwhkl uintptr) (uintptr, error) {
+func ToUnicodeEx(wVirtKey uintptr, wScanCode uintptr, lpKeyState []uint8, pwszBuff []uint16, cchBuff uintptr, wFlags uintptr, dwhkl uintptr) (uintptr, error) {
 	var _lpKeyState uintptr
 	if lpKeyState == nil {
 		_lpKeyState = 0

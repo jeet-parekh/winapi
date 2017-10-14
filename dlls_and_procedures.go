@@ -21,6 +21,43 @@ var (
 	procSetWindowsHookEx = user32DLL.NewProc("SetWindowsHookExW")
 	procUnhookWindowsHookEx = user32DLL.NewProc("UnhookWindowsHookEx")
 
+	// KEYBOARD INPUT
+	// https://msdn.microsoft.com/en-us/library/ff468859.aspx
+	procActivateKeyboardLayout = user32DLL.NewProc("ActivateKeyboardLayout")
+	procBlockInput = user32DLL.NewProc("BlockInput")
+	procEnableWindow = user32DLL.NewProc("EnableWindow")
+	procGetActiveWindow = user32DLL.NewProc("GetActiveWindow")
+	procGetAsyncKeyState = user32DLL.NewProc("GetAsyncKeyState")
+	procGetFocus = user32DLL.NewProc("GetFocus")
+	procGetKBCodePage = user32DLL.NewProc("GetKBCodePage")
+	procGetKeyboardLayout = user32DLL.NewProc("GetKeyboardLayout")
+	procGetKeyboardLayoutList = user32DLL.NewProc("GetKeyboardLayoutList")
+	procGetKeyboardLayoutName = user32DLL.NewProc("GetKeyboardLayoutNameW")
+	procGetKeyboardState = user32DLL.NewProc("GetKeyboardState")
+	procGetKeyboardType = user32DLL.NewProc("GetKeyboardType")
+	procGetKeyNameText = user32DLL.NewProc("GetKeyNameTextW")
+	procGetKeyState = user32DLL.NewProc("GetKeyState")
+	procGetLastInputInfo = user32DLL.NewProc("GetLastInputInfo")
+	procIsWindowEnabled = user32DLL.NewProc("IsWindowEnabled")
+	procKeybd_event = user32DLL.NewProc("keybd_event")
+	procLoadKeyboardLayout = user32DLL.NewProc("LoadKeyboardLayoutW")
+	procMapVirtualKey = user32DLL.NewProc("MapVirtualKeyW")
+	procMapVirtualKeyEx = user32DLL.NewProc("MapVirtualKeyExW")
+	procOemKeyScan = user32DLL.NewProc("OemKeyScan")
+	procRegisterHotKey = user32DLL.NewProc("RegisterHotKey")
+	procSendInput = user32DLL.NewProc("SendInput")
+	procSetActiveWindow = user32DLL.NewProc("SetActiveWindow")
+	procSetFocus = user32DLL.NewProc("SetFocus")
+	procSetKeyboardState = user32DLL.NewProc("SetKeyboardState")
+	procToAscii = user32DLL.NewProc("ToAscii")
+	procToAsciiEx = user32DLL.NewProc("ToAsciiEx")
+	procToUnicode = user32DLL.NewProc("ToUnicode")
+	procToUnicodeEx = user32DLL.NewProc("ToUnicodeEx")
+	procUnloadKeyboardLayout = user32DLL.NewProc("UnloadKeyboardLayout")
+	procUnregisterHotKey = user32DLL.NewProc("UnregisterHotKey")
+	procVkKeyScan = user32DLL.NewProc("VkKeyScanW")
+	procVkKeyScanEx = user32DLL.NewProc("VkKeyScanExW")
+
 	// MESSAGES AND MESSAGE QUEUES
 	// https://msdn.microsoft.com/en-us/library/ff468870.aspx
 	procBroadcastSystemMessage = user32DLL.NewProc("BroadcastSystemMessageW")
@@ -64,4 +101,10 @@ var (
 	procGetRawInputDeviceList = user32DLL.NewProc("GetRawInputDeviceList")
 	procGetRegisteredRawInputDevices = user32DLL.NewProc("GetRegisteredRawInputDevices")
 	procRegisterRawInputDevices = user32DLL.NewProc("RegisterRawInputDevices")
+
+	// TIMERS
+	// https://msdn.microsoft.com/en-us/library/ff468913.aspx
+	procKillTimer = user32DLL.NewProc("KillTimer")
+	procSetCoalescableTimer = user32DLL.NewProc("SetCoalescableTimer")
+	procSetTimer = user32DLL.NewProc("SetTimer")
 )

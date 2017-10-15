@@ -142,17 +142,20 @@ func RegisterHotKey(hWnd uintptr, id uintptr, fsModifiers uintptr, vk uintptr) (
 
 // https://msdn.microsoft.com/en-us/library/ms646310.aspx
 func SendInputM(nInputs uintptr, pInputs []INPUT_M, cbSize uintptr) (uintptr, error) {
-	return sendInput(_I_M, nInputs, pInputs, cbSize)
+	r1, _, err := procSendInput.Call(nInputs, uintptr(unsafe.Pointer(&pInputs[0])), cbSize)
+	return r1, err
 }
 
 // https://msdn.microsoft.com/en-us/library/ms646310.aspx
 func SendInputK(nInputs uintptr, pInputs []INPUT_K, cbSize uintptr) (uintptr, error) {
-	return sendInput(_I_K, nInputs, pInputs, cbSize)
+	r1, _, err := procSendInput.Call(nInputs, uintptr(unsafe.Pointer(&pInputs[0])), cbSize)
+	return r1, err
 }
 
 // https://msdn.microsoft.com/en-us/library/ms646310.aspx
 func SendInputHW(nInputs uintptr, pInputs []INPUT_HW, cbSize uintptr) (uintptr, error) {
-	return sendInput(_I_HW, nInputs, pInputs, cbSize)
+	r1, _, err := procSendInput.Call(nInputs, uintptr(unsafe.Pointer(&pInputs[0])), cbSize)
+	return r1, err
 }
 
 // https://msdn.microsoft.com/en-us/library/ms646311.aspx
@@ -242,20 +245,5 @@ func VkKeyScan(ch uintptr) (uintptr, error) {
 // https://msdn.microsoft.com/en-us/library/ms646332.aspx
 func VkKeyScanEx(ch uintptr, dwhkl uintptr) (uintptr, error) {
 	r1, _, err := procVkKeyScanEx.Call(ch, dwhkl)
-	return r1, err
-}
-
-// https://msdn.microsoft.com/en-us/library/ms646310.aspx
-func sendInput(mode uintptr, nInputs uintptr, pInputs interface{}, cbSize uintptr) (uintptr, error) {
-	var _pInputs uintptr
-	switch mode {
-	case _I_M:
-		_pInputs = uintptr(unsafe.Pointer(&pInputs.([]INPUT_M)[0]))
-	case _I_K:
-		_pInputs = uintptr(unsafe.Pointer(&pInputs.([]INPUT_K)[0]))
-	case _I_HW:
-		_pInputs = uintptr(unsafe.Pointer(&pInputs.([]INPUT_HW)[0]))
-	}
-	r1, _, err := procSendInput.Call(nInputs, _pInputs, cbSize)
 	return r1, err
 }

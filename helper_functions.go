@@ -1,13 +1,13 @@
 package winapi
 
 import (
-	"unsafe"
 	"golang.org/x/sys/windows"
+	"unsafe"
 )
 
 func int32ToUintptr(v int32) uintptr {
 	if v < 0 {
-		return uintptr(uint32(1<<32 - 1) - uint32(-v) + 1)
+		return uintptr(uint32(1<<32-1) - uint32(-v) + 1)
 	}
 	return uintptr(v)
 }

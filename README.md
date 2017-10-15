@@ -34,7 +34,6 @@ The structures and functions which have variants are mentioned below.
 |MBI|MouseButtonInformation|
 |K|Keyboard|
 |HID|Human Interface Device|
-|||
 
 ### Structures
 
@@ -43,7 +42,6 @@ The structures and functions which have variants are mentioned below.
 |[RAWINPUT](https://msdn.microsoft.com/en-us/library/ms645562.aspx)|RAWINPUT\_MB<br>RAWINPUT\_MBI<br>RAWINPUT\_K<br>RAWINPUT\_HID|
 |[RAWMOUSE](https://msdn.microsoft.com/en-us/library/ms645578.aspx)|RAWMOUSEBUTTONS<br>RAWMOUSEBUTTONINFO|
 |[RID\_DEVICE\_INFO](https://msdn.microsoft.com/en-us/library/ms645581.aspx)|RIDI\_M<br>RIDI\_K<br>RIDI\_HID|
-|||
 
 ### Functions
 
@@ -53,7 +51,6 @@ The structures and functions which have variants are mentioned below.
 |[GetRawInputBuffer](https://msdn.microsoft.com/en-us/library/ms645595.aspx)|GetRawInputBufferMB<br>GetRawInputBufferMBI<br>GetRawInputBufferK<br>GetRawInputBufferHID|
 |[GetRawInputData](https://msdn.microsoft.com/en-us/library/ms645596.aspx)|GetRawInputDataMB<br>GetRawInputDataMBI<br>GetRawInputDataK<br>GetRawInputDataHID|
 |[GetRawInputDeviceInfo](https://msdn.microsoft.com/en-us/library/ms645597.aspx)|GetRawInputDeviceName<br>GetRawInputDeviceInfoM<br>GetRawInputDeviceInfoK<br>GetRawInputDeviceInfoHID|
-|||
 
 ---
 
@@ -66,20 +63,17 @@ The structures and functions which have variants are mentioned below.
 |M|Mouse|
 |K|Keyboard|
 |HW|Hardware|
-|||
 
 ### Structures
 
 |WINAPI|Go|
 |---|---|
 |[INPUT](https://msdn.microsoft.com/en-us/library/ms646270.aspx)|INPUT\_M<br>INPUT\_K<br>INPUT\_HW|
-|||
 
 ### Functions
 
 |WINAPI|Go|
 |---|---|
 |[SendInput](https://msdn.microsoft.com/en-us/library/ms646310.aspx)|SendInputM<br>SendInputK<br>SendInputHW|
-|||
 
 ---

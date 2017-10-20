@@ -423,4 +423,73 @@ type (
 		HwndTrack   uintptr
 		DwHoverTime uint32
 	}
+
+	// https://docs.microsoft.com/en-us/windows/console/coord-str
+	COORD struct {
+		X int16
+		Y int16
+	}
+
+	// https://docs.microsoft.com/en-us/windows/console/focus-event-record-str
+	FOCUS_EVENT_RECORD struct {
+		BSetFocus int32
+	}
+
+	// https://docs.microsoft.com/en-us/windows/console/mouse-event-record-str
+	MOUSE_EVENT_RECORD struct {
+		DwMousePosition COORD
+		DwButtonState uint32
+		DwControlKeyState uint32
+		DwEventFlags uint32
+	}
+
+	// https://docs.microsoft.com/en-us/windows/console/menu-event-record-str
+	MENU_EVENT_RECORD struct {
+		DwCommandId uint32
+	}
+
+	// https://docs.microsoft.com/en-us/windows/console/key-event-record-str
+	KEY_EVENT_RECORD struct {
+		BKeyDown int32
+		WRepeatCount uint16
+		WVirtualKeyCode uint16
+		WVirtualScanCode uint16
+		UChar uint16
+		DwControlKeyState uint32
+	}
+
+	// https://docs.microsoft.com/en-us/windows/console/window-buffer-size-record-str
+	WINDOW_BUFFER_SIZE_RECORD struct {
+		DwSize COORD
+	}
+
+	// https://docs.microsoft.com/en-us/windows/console/input-record-str
+	INPUT_RECORD_KEY struct {
+		EventType uint16
+		Event KEY_EVENT_RECORD
+	}
+
+	// https://docs.microsoft.com/en-us/windows/console/input-record-str
+	INPUT_RECORD_MOUSE struct {
+		EventType uint16
+		Event MOUSE_EVENT_RECORD
+	}
+
+	// https://docs.microsoft.com/en-us/windows/console/input-record-str
+	INPUT_RECORD_WINDOW_BUFFER_SIZE struct {
+		EventType uint16
+		Event WINDOW_BUFFER_SIZE_RECORD
+	}
+
+	// https://docs.microsoft.com/en-us/windows/console/input-record-str
+	INPUT_RECORD_MENU struct {
+		EventType uint16
+		Event MENU_EVENT_RECORD
+	}
+
+	// https://docs.microsoft.com/en-us/windows/console/input-record-str
+	INPUT_RECORD_FOCUS struct {
+		EventType uint16
+		Event FOCUS_EVENT_RECORD
+	}
 )

@@ -6,6 +6,7 @@ import (
 
 var (
 	user32DLL = windows.NewLazySystemDLL("user32.dll")
+	kernel32DLL = windows.NewLazySystemDLL("kernel32.dll")
 )
 
 var (
@@ -121,4 +122,16 @@ var (
 	procKillTimer           = user32DLL.NewProc("KillTimer")
 	procSetCoalescableTimer = user32DLL.NewProc("SetCoalescableTimer")
 	procSetTimer            = user32DLL.NewProc("SetTimer")
+
+	// PROCESSES AND THREADS
+	// https://msdn.microsoft.com/en-us/library/ms684847.aspx
+	procGetCurrentThreadId = kernel32DLL.NewProc("GetCurrentThreadId")
+
+	// CONSOLE
+	// https://docs.microsoft.com/en-us/windows/console/console-functions
+	procGetConsoleMode = kernel32DLL.NewProc("GetConsoleMode")
+	procGetStdHandle = kernel32DLL.NewProc("GetStdHandle")
+	procPeekConsoleInput = kernel32DLL.NewProc("PeekConsoleInputW")
+	procReadConsoleInput = kernel32DLL.NewProc("ReadConsoleInputW")
+	procSetConsoleMode = kernel32DLL.NewProc("SetConsoleMode")
 )

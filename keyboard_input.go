@@ -112,7 +112,7 @@ func LoadKeyboardLayout(pwszKLID string, Flags uintptr) (uintptr, error) {
 	if err != nil {
 		return 0, err
 	}
-	r1, _, err := procLoadKeyboardLayout.Call(uintptr(unsafe.Pointer(_pwszKLID)), Flags)
+	r1, _, err := procLoadKeyboardLayout.Call(_pwszKLID, Flags)
 	return r1, err
 }
 

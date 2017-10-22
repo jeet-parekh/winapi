@@ -129,6 +129,7 @@ var (
 
 	// CONSOLE
 	// https://docs.microsoft.com/en-us/windows/console/console-functions
+	procFlushConsoleInputBuffer = kernel32DLL.NewProc("FlushConsoleInputBuffer")
 	procGetConsoleMode = kernel32DLL.NewProc("GetConsoleMode")
 	procGetStdHandle = kernel32DLL.NewProc("GetStdHandle")
 	procPeekConsoleInput = kernel32DLL.NewProc("PeekConsoleInputW")

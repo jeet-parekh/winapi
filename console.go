@@ -4,6 +4,12 @@ import (
 	"unsafe"
 )
 
+// https://docs.microsoft.com/en-us/windows/console/flushconsoleinputbuffer
+func FlushConsoleInputBuffer(hConsoleInput uintptr) (uintptr, error) {
+	r1, _, err := procFlushConsoleInputBuffer.Call(hConsoleInput)
+	return r1, err
+}
+
 // https://docs.microsoft.com/en-us/windows/console/getconsolemode
 func GetConsoleMode(hConsoleHandle uintptr, lpMode *uintptr) (uintptr, error) {
 	r1, _, err := procGetConsoleMode.Call(hConsoleHandle, uintptr(unsafe.Pointer(lpMode)))

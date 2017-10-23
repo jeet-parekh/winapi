@@ -5,7 +5,7 @@ import (
 )
 
 var (
-	user32DLL = windows.NewLazySystemDLL("user32.dll")
+	user32DLL   = windows.NewLazySystemDLL("user32.dll")
 	kernel32DLL = windows.NewLazySystemDLL("kernel32.dll")
 )
 
@@ -130,9 +130,9 @@ var (
 	// CONSOLE
 	// https://docs.microsoft.com/en-us/windows/console/console-functions
 	procFlushConsoleInputBuffer = kernel32DLL.NewProc("FlushConsoleInputBuffer")
-	procGetConsoleMode = kernel32DLL.NewProc("GetConsoleMode")
-	procGetStdHandle = kernel32DLL.NewProc("GetStdHandle")
-	procPeekConsoleInput = kernel32DLL.NewProc("PeekConsoleInputW")
-	procReadConsoleInput = kernel32DLL.NewProc("ReadConsoleInputW")
-	procSetConsoleMode = kernel32DLL.NewProc("SetConsoleMode")
+	procGetConsoleMode          = kernel32DLL.NewProc("GetConsoleMode")
+	procGetStdHandle            = kernel32DLL.NewProc("GetStdHandle")
+	procPeekConsoleInput        = kernel32DLL.NewProc("PeekConsoleInputW")
+	procReadConsoleInput        = kernel32DLL.NewProc("ReadConsoleInputW")
+	procSetConsoleMode          = kernel32DLL.NewProc("SetConsoleMode")
 )

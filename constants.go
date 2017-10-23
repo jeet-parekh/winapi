@@ -1098,45 +1098,45 @@ const (
 	FROM_LEFT_2ND_BUTTON_PRESSED uintptr = 0x0004
 	FROM_LEFT_3RD_BUTTON_PRESSED uintptr = 0x0008
 	FROM_LEFT_4TH_BUTTON_PRESSED uintptr = 0x0010
-	RIGHTMOST_BUTTON_PRESSED uintptr = 0x0002
-	
-	CAPSLOCK_ON uintptr = 0x0080
-	ENHANCED_KEY uintptr = 0x0100
-	LEFT_ALT_PRESSED uintptr = 0x0002
-	LEFT_CTRL_PRESSED uintptr = 0x0008
-	NUMLOCK_ON uintptr = 0x0020
-	RIGHT_ALT_PRESSED uintptr = 0x0001
+	RIGHTMOST_BUTTON_PRESSED     uintptr = 0x0002
+
+	CAPSLOCK_ON        uintptr = 0x0080
+	ENHANCED_KEY       uintptr = 0x0100
+	LEFT_ALT_PRESSED   uintptr = 0x0002
+	LEFT_CTRL_PRESSED  uintptr = 0x0008
+	NUMLOCK_ON         uintptr = 0x0020
+	RIGHT_ALT_PRESSED  uintptr = 0x0001
 	RIGHT_CTRL_PRESSED uintptr = 0x0004
-	SCROLLLOCK_ON uintptr = 0x0040
-	SHIFT_PRESSED uintptr = 0x0010
-	
-	DOUBLE_CLICK uintptr = 0x0002
+	SCROLLLOCK_ON      uintptr = 0x0040
+	SHIFT_PRESSED      uintptr = 0x0010
+
+	DOUBLE_CLICK   uintptr = 0x0002
 	MOUSE_HWHEELED uintptr = 0x0008
-	MOUSE_MOVED uintptr = 0x0001
-	MOUSE_WHEELED uintptr = 0x0004
-	
-	FOCUS_EVENT uintptr = 0x0010
-	KEY_EVENT uintptr = 0x0001
-	MENU_EVENT uintptr = 0x0008
-	MOUSE_EVENT uintptr = 0x0002
+	MOUSE_MOVED    uintptr = 0x0001
+	MOUSE_WHEELED  uintptr = 0x0004
+
+	FOCUS_EVENT              uintptr = 0x0010
+	KEY_EVENT                uintptr = 0x0001
+	MENU_EVENT               uintptr = 0x0008
+	MOUSE_EVENT              uintptr = 0x0002
 	WINDOW_BUFFER_SIZE_EVENT uintptr = 0x0004
-	
-	ENABLE_ECHO_INPUT uintptr = 0x0004
-	ENABLE_EXTENDED_FLAGS uintptr = 0x0080
-	ENABLE_INSERT_MODE uintptr = 0x0020
-	ENABLE_LINE_INPUT uintptr = 0x0002
-	ENABLE_MOUSE_INPUT uintptr = 0x0010
-	ENABLE_PROCESSED_INPUT uintptr = 0x0001
-	ENABLE_QUICK_EDIT_MODE uintptr = 0x0040
-	ENABLE_WINDOW_INPUT uintptr = 0x0008
-	ENABLE_VIRTUAL_TERMINAL_INPUT uintptr = 0x0200
-	ENABLE_PROCESSED_OUTPUT uintptr = 0x0001
-	ENABLE_WRAP_AT_EOL_OUTPUT uintptr = 0x0002
+
+	ENABLE_ECHO_INPUT                  uintptr = 0x0004
+	ENABLE_EXTENDED_FLAGS              uintptr = 0x0080
+	ENABLE_INSERT_MODE                 uintptr = 0x0020
+	ENABLE_LINE_INPUT                  uintptr = 0x0002
+	ENABLE_MOUSE_INPUT                 uintptr = 0x0010
+	ENABLE_PROCESSED_INPUT             uintptr = 0x0001
+	ENABLE_QUICK_EDIT_MODE             uintptr = 0x0040
+	ENABLE_WINDOW_INPUT                uintptr = 0x0008
+	ENABLE_VIRTUAL_TERMINAL_INPUT      uintptr = 0x0200
+	ENABLE_PROCESSED_OUTPUT            uintptr = 0x0001
+	ENABLE_WRAP_AT_EOL_OUTPUT          uintptr = 0x0002
 	ENABLE_VIRTUAL_TERMINAL_PROCESSING uintptr = 0x0004
-	DISABLE_NEWLINE_AUTO_RETURN uintptr = 0x0008
-	ENABLE_LVB_GRID_WORLDWIDE uintptr = 0x0010
-	
-	STD_INPUT_HANDLE uintptr = -10 & (1<<32 - 1)
+	DISABLE_NEWLINE_AUTO_RETURN        uintptr = 0x0008
+	ENABLE_LVB_GRID_WORLDWIDE          uintptr = 0x0010
+
+	STD_INPUT_HANDLE  uintptr = -10 & (1<<32 - 1)
 	STD_OUTPUT_HANDLE uintptr = -11 & (1<<32 - 1)
-	STD_ERROR_HANDLE uintptr = -12 & (1<<32 - 1)
+	STD_ERROR_HANDLE  uintptr = -12 & (1<<32 - 1)
 )

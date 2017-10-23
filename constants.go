@@ -334,6 +334,44 @@ const (
 	VK_PA1                 uintptr = 0xFD
 	VK_OEM_CLEAR           uintptr = 0xFE
 
+	VK_0 uintptr = 0x30
+	VK_1 uintptr = 0x31
+	VK_2 uintptr = 0x32
+	VK_3 uintptr = 0x33
+	VK_4 uintptr = 0x34
+	VK_5 uintptr = 0x35
+	VK_6 uintptr = 0x36
+	VK_7 uintptr = 0x37
+	VK_8 uintptr = 0x38
+	VK_9 uintptr = 0x39
+
+	VK_A uintptr = 0x41
+	VK_B uintptr = 0x42
+	VK_C uintptr = 0x43
+	VK_D uintptr = 0x44
+	VK_E uintptr = 0x45
+	VK_F uintptr = 0x46
+	VK_G uintptr = 0x47
+	VK_H uintptr = 0x48
+	VK_I uintptr = 0x49
+	VK_J uintptr = 0x4A
+	VK_K uintptr = 0x4B
+	VK_L uintptr = 0x4C
+	VK_M uintptr = 0x4D
+	VK_N uintptr = 0x4E
+	VK_O uintptr = 0x4F
+	VK_P uintptr = 0x50
+	VK_Q uintptr = 0x51
+	VK_R uintptr = 0x52
+	VK_S uintptr = 0x53
+	VK_T uintptr = 0x54
+	VK_U uintptr = 0x55
+	VK_V uintptr = 0x56
+	VK_W uintptr = 0x57
+	VK_X uintptr = 0x58
+	VK_Y uintptr = 0x59
+	VK_Z uintptr = 0x5A
+
 	KEYEVENTF_EXTENDEDKEY uintptr = 0x0001
 	KEYEVENTF_KEYUP       uintptr = 0x0002
 	KEYEVENTF_SCANCODE    uintptr = 0x0008

@@ -2,6 +2,11 @@
 
 ---
 
+### About `winapi`
+
+- `winapi` provides wrappers around WinAPI functions.
+- [Documentation: godoc](https://godoc.org/github.com/jeet-parekh/winapi)
+
 APIs wrapped:
 
 - [Configuration](https://msdn.microsoft.com/en-us/library/ff625300.aspx)
